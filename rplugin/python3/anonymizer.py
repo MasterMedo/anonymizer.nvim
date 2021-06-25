@@ -7,7 +7,7 @@ class BufferAnonymizer(object):
         self.nvim = nvim
 
     @pynvim.function("AnonymizeBuffer")
-    def anonymize_buffer(self, _):
+    def anonymize_buffer(self, left='<', right='>', mid='o', solo='='):
         src = self.nvim.new_highlight_source()
         top_line = self.nvim.funcs.line("w0")
         bottom_line = self.nvim.funcs.line("w$")
@@ -20,12 +20,12 @@ class BufferAnonymizer(object):
                 if start == end:
                     raise Exception(f'start and end are the same: {start}')
                 if start + 1 == end:
-                    new_line += 'O'
+                    new_line += solo
                 else:
-                    new_line += '('
+                    new_line += left
                     for col in range(start + 1, end - 1):
-                        new_line += 'D'
-                    new_line += ')'
+                        new_line += mid
+                    new_line += right
 
             self.nvim.current.buffer[lnum - 1] = new_line[2:]
             for synid, start, end in blobs:
