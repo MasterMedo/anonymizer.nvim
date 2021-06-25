@@ -20,12 +20,12 @@ class BufferAnonymizer(object):
                 if start == end:
                     raise Exception(f'start and end are the same: {start}')
                 if start + 1 == end:
-                    new_line += solo
+                    new_line += str(solo)
                 else:
-                    new_line += left
+                    new_line += str(left)
                     for col in range(start + 1, end - 1):
-                        new_line += mid
-                    new_line += right
+                        new_line += str(mid)
+                    new_line += str(right)
 
             self.nvim.current.buffer[lnum - 1] = new_line[2:]
             for synid, start, end in blobs:
