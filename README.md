@@ -18,4 +18,12 @@ Plug 'mastermedo/anonymizer.vim'
 5. use anonymizer
 ```
 map <leader><leader> :call AnonymizeBuffer()<cr>
+map <leader><leader> :call AnonymizeBuffer('(', ')', '#', 'O')<cr>
 ```
+
+### TODO
+- characters of variable length/bytes (unicode)
+- one click undo
+- optimise code
+- update as buffer view moves
+- switch to vimscript or lua
