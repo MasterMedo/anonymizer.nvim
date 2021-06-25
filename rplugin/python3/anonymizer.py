@@ -10,7 +10,7 @@ class BufferAnonymizer(object):
     def anonymize_buffer(self, args):
         self.anonymize(*args)
 
-    def anonymize(self, left='<', right='>', mid='o', solo='='):
+    def anonymize(self, left='<', right='>', mid='=', solo='o'):
         src = self.nvim.new_highlight_source()
         top_line = self.nvim.funcs.line("w0")
         bottom_line = self.nvim.funcs.line("w$")
