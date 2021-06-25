@@ -14,7 +14,8 @@ Plug 'mastermedo/anonymizer.vim'
 :PlugInstall
 :UpdateRemotePlugins
 ```
-4. use anonymizer
+4. restart neovim
+5. use anonymizer
 ```
 map <leader><leader> :call AnonymizeBuffer()<cr>
 ```
