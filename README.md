@@ -1,5 +1,7 @@
 # neovim buffer anonymizer
 
+### [inception of the idea](https://github.com/inkarkat/vim-mark/issues/37)
+
 1. set up python path in your init.vim
 ```vim
 let g:python3_host_prog = '/usr/bin/python3'
